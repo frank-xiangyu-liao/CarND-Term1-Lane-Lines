@@ -22,7 +22,7 @@ The goal of this project is to identify lane lines in videos. To accomplish this
 My pipeline consisted of the following steps:
 
 
-####draw_lines() function modification
+####Modification of the draw_lines() function
 
 
 
