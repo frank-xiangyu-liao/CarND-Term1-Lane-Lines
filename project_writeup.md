@@ -1,4 +1,4 @@
-#**Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road** 
 
 The goal of this project is to identify lane lines in videos. To accomplish this goal, these are the steps taken:
 
@@ -22,9 +22,9 @@ All the required files are contained in the [Github repository](https://github.c
 
 ---
 
-###Pipeline for Lane Lines Identification
+### Pipeline for Lane Lines Identification
 
-####Pipeline Steps
+#### Pipeline Steps
 
 My pipeline consisted of the following steps:
 
@@ -32,9 +32,7 @@ My pipeline consisted of the following steps:
 ![HSV]
 2. Find yellow and white colors using openCV.inRange(). The Hue, Satauration and Value(brightness) parameters are set based on multiple tries and suggestions from [Medium](https://medium.com/) and [Slack](https://carnd.slack.com/messages/p-lane-lines).
 ![yellow]
-<center>Yellow</center>
 ![white]
-<center>White</center>
 3. Combind the yellow and white HSV images in step 2 into a single image.
 ![gray]
 4. Apply region-of-interest mask to image in step 4 to rule out noise outside the lane lines region.
@@ -46,7 +44,7 @@ My pipeline consisted of the following steps:
 Here's what the final image in the video looks like (combining the original image with lane lines):
 ![final]
 
-####Modification of the draw_lines() function
+#### Modification of the draw_lines() function
 
 Instead of drawing all the Hough lines on the image, two averaged (left and right) lane lines are calculated using the following algorithm:
 
@@ -61,7 +59,7 @@ Instead of drawing all the Hough lines on the image, two averaged (left and righ
 
 ### Reflections
 
-###1. Shortcomings
+### 1. Shortcomings
 
 The pipeline works fine for the video with solid white lane on the right; for the one with yellow solid lane on the left, the pipeline can accurately annotate left and right lanes throughout the most part, but has glitches (deviated lane lines) for a few frames. In my opinion, it reflects the following shortcomings of my pipeline:
 
@@ -73,7 +71,7 @@ The pipeline works fine for the video with solid white lane on the right; for th
 
 3. Hard-coded region of interest (directly set the points of the vertices of the region based on image size and use it throughout the stream). That's why the lane lines yielded from my pipeline is a little bit too short: to rule out all the undesired noises with a fixed mask, it needs to be aggressive enough, and that compromises some lane lines that should've been in the image.
 
-###2. Future Improvements
+### 2. Future Improvements
 
 Based on the shortcomings listed above, the following improvements can be made:
 
