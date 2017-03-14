@@ -6,7 +6,7 @@ The goal of this project is to identify lane lines in videos. To accomplish this
 2. Build a pipeline function to process consecutive image stream
 3. Apply the pipeline to a video to mark lane lines consecutively
 
-All the required files are contained in the [Github repository](https://github.com/frank-xiangyu-liao/CarND-Term1-Lane-Lines). It also includes an exported HTML file (to add link) of the notebook for viewing pleasure.
+All the required files are contained in the [Github repository](https://github.com/frank-xiangyu-liao/CarND-Term1-Lane-Lines). It also includes an [exported HTML file](./P1.html) of the notebook for viewing pleasure.
 
 [//]: # (Image References)
 
